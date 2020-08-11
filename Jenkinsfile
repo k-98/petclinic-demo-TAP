@@ -30,7 +30,7 @@ pipeline{
       steps{
         echo "Pushing Docker Image"
          script{
-            docker.withRegistry( '','docker_hub_kishan' ) {
+            docker.withRegistry( '', docker_hub_kishan ) {
               dockerImage.push()
               dockerImage.push('latest')
            }
