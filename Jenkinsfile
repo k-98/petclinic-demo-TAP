@@ -29,12 +29,7 @@ pipeline{
      stage ('Push Docker Image'){
       steps{
         echo "Pushing Docker Image"
-         script{
-            docker.withRegistry( '', registryCredential ) {
-              dockerImage.push()
-              dockerImage.push('latest')
-           }
-         }
+
       }
     }
      stage ('Deploy to Dev'){
